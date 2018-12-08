@@ -70,9 +70,6 @@ client.on('message',async message => {
   });
 
 
-
-client.login(process.env.BOT_TOKEN);
-
 const Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
