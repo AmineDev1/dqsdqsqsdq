@@ -27,20 +27,6 @@ client.user.setGame(` KSA Community Forever ♥  `,"http://twitch.tv/S-F")
   console.log('')
 });
 
-
-
-const bannedwords = [
-    "كل زق",
-    "كسمك",
-    "يلعن امك",
-    "يلعن ابوك",
-    "منيوك",
-    "الله يلعنك"
-    "فازلين"
-    "كس اختك"
-
-  ];
-
 client.on('message',  message => {
   if(bannedwords.some(word => message.content.includes(word))) {
     message.delete()
