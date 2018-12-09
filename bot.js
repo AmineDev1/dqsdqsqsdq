@@ -55,8 +55,23 @@ client.channels.find('id', '521265412944691211').setName("Welcome To KSA Communi
 
 
  client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("☀ Members Of Community","☀ Members Of Community"));
+    member.addRole(member.guild.roles.find("name","☀ Members Of Community"));
     });
+
+
+client.on('message', function(message) {
+    if (message.channel.type === "dm") {
+        if (message.author.id === client.user.id) return;
+        var RaYaN= new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setTimestamp()
+        .setTitle('``New Message in private``')
+        .setThumbnail(`${message.author.avatarURL}`)
+        .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
+        .setFooter(`From **${message.author.tag} (${message.author.id})**`)
+    client.channels.get("521271463135805450").send({embed:RaYaN});
+    }
+});
  
 
 client.on('message',async message => {
