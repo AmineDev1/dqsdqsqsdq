@@ -27,6 +27,7 @@ client.user.setGame(` KSA Community Forever ♥  `,"http://twitch.tv/S-F")
   console.log('')
 });
 
+
 client.on('message', message => {
 
   if (message.author.bot) return;
