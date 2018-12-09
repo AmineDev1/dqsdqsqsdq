@@ -28,6 +28,26 @@ client.user.setGame(` KSA Community Forever ♥  `,"http://twitch.tv/S-F")
 });
 
 
+
+const bannedwords = [
+    "كل زق",
+    "كسمك",
+    "يلعن امك",
+    "يلعن ابوك",
+    "منيوك",
+    "الله يلعنك"
+    "فازلين"
+    "كس اختك"
+
+  ];
+
+client.on('message',  message => {
+  if(bannedwords.some(word => message.content.includes(word))) {
+    message.delete()
+    message.reply(" ** وَلْتَكُنْ مِنْكُمْ أُمَّةٌ يَدْعُونَ إِلَى الْخَيْرِ وَيَأْمُرُونَ بِالْمَعْرُوفِ وَيَنْهَوْنَ عَنِ الْمُنْكَرِ وَأُولَئِكَ هُمُ الْمُفْلِحُونَ** ").then(msg => {msg.delete(5000)});;
+  };
+});
+
 client.on('message', async msg => {
 const devs = ['417377495160193044'];
 if(!devs.includes(message.author.id)) return;
