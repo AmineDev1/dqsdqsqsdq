@@ -27,12 +27,6 @@ client.user.setGame(` KSA Community Forever ♥  `,"http://twitch.tv/S-F")
   console.log('')
 });
 
-client.on('message',  message => {
-  if(bannedwords.some(word => message.content.includes(word))) {
-    message.delete()
-    message.reply(" ** وَلْتَكُنْ مِنْكُمْ أُمَّةٌ يَدْعُونَ إِلَى الْخَيْرِ وَيَأْمُرُونَ بِالْمَعْرُوفِ وَيَنْهَوْنَ عَنِ الْمُنْكَرِ وَأُولَئِكَ هُمُ الْمُفْلِحُونَ** ").then(msg => {msg.delete(5000)});;
-  };
-});
 
 
 client.on('message', async msg => {
