@@ -28,9 +28,6 @@ client.user.setGame(` KSA Community Forever ♥  `,"http://twitch.tv/S-F")
 });
 
 
-const Discord = require('discord.js');
-const client = new Discord.Client();
-
 client.on("ready", async  => {
 setInterval(function(){
 client.channels.find('id', '521265412944691211').setName("W");
