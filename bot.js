@@ -50,7 +50,7 @@ client.on('message', async message => {
 });
 
 
-const prefix = "*";
+const prefix = "-";
 client.on('message', message => {
   let command = message.content.split(" ")[0].slice(prefix.length);
   let args = message.content.split(" ").slice(1);
