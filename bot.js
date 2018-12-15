@@ -68,6 +68,54 @@ if(!devs.includes(message.author.id)) return;
 });
 
 
+
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const prefix = "-";
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('message', message => {
+  let command = message.content.split(" ")[0].slice(prefix.length);
+  let args = message.content.split(" ").slice(1);
+
+  if(!message.content.toLowerCase().startsWith(prefix)) return;
+  if(command == "sug") {
+    if(!args.join(" ")) return message.reply(`${prefix}suggest <suggestion>`);
+    let channel = message.guild.channels.find(c => c.name == "suggestions");
+    let embed = new Discord.RichEmbed()
+    .setAuthor(message.author.username, message.author.displayAvatarURL)
+    .setTitle(`New Suggestion!`)
+    .setFooter(message.author.id)
+    .setDescription(args.join(" "));
+    channel.send(embed).then(msg => {
+      msg.react("✅").then(() => msg.react("❌"));
+      message.delete()
+      message.channel.send(`Success!, your suggestion has been recoded to <#${channel.id}>`);
+    });
+  }
+});
+
+
+client.on('message', message => { 
+    var prefix = "-#";
+ let args = message.content.split(' ').slice(1);
+    if(message.content.startsWith(prefix + 's')) {
+    if(!message.channel.guild) return;  
+
+        googl.setKey('AIzaSyC2Z2mZ_nZTcSvh3QvIyrmOIFP6Ra6co6w');
+        googl.getKey();
+        googl.shorten(args.join(' ')).then(shorturl => {
+            message.channel.send(''+shorturl)
+        }).catch(e=>{
+            console.log(e.message);
+            message.channel.send('Error!');
+        });
+}
+});
+
+
 client.on('message', message => {
     if (message.content.startsWith("رابط")) {
 
