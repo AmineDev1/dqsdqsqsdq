@@ -50,7 +50,6 @@ client.on('message', async message => {
 });
 
 
-
 client.on('message', async msg => {
 const devs = ['417377495160193044'];
 if(!devs.includes(message.author.id)) return;
