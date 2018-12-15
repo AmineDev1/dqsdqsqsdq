@@ -28,6 +28,138 @@ client.user.setGame(` KSA Community Forever ♥  `,"http://twitch.tv/S-F")
 });
 
 
+client.on('ready',async () => {
+  client.channels.find(ch => ch.id === "521265412944691211" && ch.type === 'voice').join();
+});
+
+
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const fs = require('fs');
+const moment = require('moment');
+const jimp = require('jimp');
+const Canvas = require('canvas');
+
+client.on('guildMemberAdd', member => {
+     const welcomer =  member.guild.channels.find('name', 'new-member');
+    if(!welcomer) return;
+      if(welcomer) {
+         moment.locale('ar-ly');
+         var m = member.user;
+        let yumz = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(m.avatarURL)
+        .setAuthor(m.username,m.avatarURL)
+        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
+      
+         .setFooter(`${m.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
+     welcomer.send({embed:yumz});          
+         
+    
+
+
+
+const w = ['./img/w1.png'];
+
+         let Image = Canvas.Image,
+            canvas = new Canvas(400, 200),
+            ctx = canvas.getContext('2d');
+        fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+            if (err) return console.log(err);
+            let BG = Canvas.Image;
+            let ground = new Image;
+            ground.src = Background;
+            ctx.drawImage(ground, 0, 0, 400, 200);
+             
+          
+
+                let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(100) + ".png" : member.user.displayAvatarURL;
+                jimp.read(url, (err, ava) => {
+                    if (err) return console.log(err);
+                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                        if (err) return console.log(err);
+                        
+                        ctx.font = "bold 12px Arial";
+                        ctx.fontSize = '20px';
+                        ctx.fillStyle = "#f1f1f1";
+                        ctx.textAlign = "center";
+                        ctx.fillText(`welcome to ${member.guild.name}`, 300, 130);
+                        
+                        ctx.font = "bold 12px Arial";
+                        ctx.fontSize = '20px';
+                        ctx.fillStyle = "#f1f1f1";
+                        ctx.textAlign = "center";
+                        ctx.fillText(member.user.username, 200, 150);
+ 
+                let Avatar = Canvas.Image;
+                              let ava = new Avatar;
+                              ava.src = buf;
+                              ctx.beginPath();
+                              ctx.arc(77, 101, 62, 0, Math.PI*2);
+                              ctx.stroke();
+                                 ctx.clip();
+                                 ctx.drawImage(ava, 13, 38, 128, 126);  
+                          
+                
+                             
+welcomer.sendFile(canvas.toBuffer())
+
+
+
+      
+      
+                    }  )  
+      
+                    
+
+})
+      });                    
+ }
+});
+
+
+const hastebin = require('hastebin-gen');
+client.on('message', message => {
+var PREFIX = '*';
+    if(message.content.startsWith(PREFIX + 'dis')) {
+            var args = message.content.split(' ').slice(1).join(' ');
+}
+      var array = [];
+      var i = 0;
+      if(args){
+client.users.filter(u => u.discriminator == args).map(u => {
+    if(i > 4){
+     return;
+    }
+    i = i + 1;
+ 
+   array.push(`${u.tag}`);
+});
+}
+hastebin(`${array.slice(0, 30).join('\n')}`, 'txt').then(l => {
+    message.channel.send(`${l}`);
+}).catch(console.error);
+});
+client.on('message' , message => {
+var PREFIX = '*';
+if(message.content === `${PREFIX}dis         `         ) {
+                      let array = [];
+                      var i = 0;
+client.users.filter(u => u.discriminator == message.author.discriminator).map(u => {
+    if(i > 4){
+     return;
+    }
+    i = i + 1;
+   array.push(`${u.tag}`);
+});
+hastebin(`${array.slice(0, 30).join('\n')}`, 'txt').then(l => {
+    message.channel.send(`${l}`);
+}).catch(console.error);
+ 
+        }
+});
+
+
 const adminprefix = "$";
 const devs = ['417377495160193044'];
 client.on('message', message => {
@@ -56,77 +188,94 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 
 
 
-client.on('message',async msg => {
-  if(msg.channel.type === "dm") return;
-if(msg.author.bot) return;
-var p = "-";
-if(msg.content.startsWith(p + "setstats")) {
-if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('? **يجب ان تمتلك رتبه **');
-if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('? **البوت لا يمتلك صلاحية**');
-var stats = msg.guild.createChannel('📊 Server Stats 📊', 'category').then(kk => {
-  var member =msg.guild.createChannel('Members Count [ 0 ] ', 'voice').then(member => {
-        var voiceonline =msg.guild.createChannel('Voiceonline [ 0 ]', 'voice').then(voiceonline => {
-             var time =msg.guild.createChannel('🕐 - Time  ', 'voice').then(time => {
-              var c = msg.guild.createChannel(`Day : ${moment().format('dddd')}` , 'voice').then(c => {
-    member.setParent(kk);            
-    voiceonline.setParent(kk);
-    time.setParent(kk);
-    c.setParent(kk);
-
- 
-    member.overwritePermissions(msg.guild.id, {
-      CONNECT: false,
-      SPEAK: false
-    });
-  voiceonline.overwritePermissions(msg.guild.id, {
-   CONNECT: false,
-   SPEAK: false
- });
-  time.overwritePermissions(msg.guild.id, {
-   CONNECT: false,
-   SPEAK: false
- });
- c.overwritePermissions(msg.guild.id, {
-  CONNECT: false,
-  SPEAK: false
-});
-
-
-
-setInterval(function() {
-
+var prefix = "*"
+const moment = require('moment');
+client.on('message',async message => {
+  var time = moment().format('Do MMMM YYYY , hh:mm');
+  var room;
+  var title;
+  var duration;
+  var gMembers;
   var currentTime = new Date(),
-  hours = currentTime.getHours() + 3 ,
-  minutes = currentTime.getMinutes(),
-  seconds = currentTime.getSeconds(),
-  years = currentTime.getFullYear(),
-  month = currentTime.getMonth(),
-  day = currentTime.getDay();
-
-  if (minutes < 10) {
-      minutes = "0" + minutes;
-  }
-  var suffix = "AM";
-  if (hours >= 12) {
-      suffix = "PM";
-      hours = hours - 12;
-  }
-  if (hours == 0) {
-      hours = 12;
-  }
-  member.setName(`Members Count : [ ${msg.guild.members.size} ]`)
-voiceonline.setName(`Voice Online :[ ${msg.guild.members.filter(m => m.voiceChannel).size} ]`);
-   time.setName(`🕐 - Time : 「${hours} : ${minutes} :  ${suffix}」`);
-     c.setName(`📅 - Day : 「${moment().format('dddd')}」`);
-},1000);
-                })
-
-             })
-        })
-      })
-})
-        
+hours = currentTime.getHours() + 3 ,
+minutes = currentTime.getMinutes(),
+done = currentTime.getMinutes() + duration / 60000 ,
+seconds = currentTime.getSeconds();
+if (minutes < 10) {
+minutes = "0" + minutes;
 }
+var suffix = "AM";
+if (hours >= 12) {
+suffix = "PM";
+hours = hours - 12;
+}
+if (hours == 0) {
+hours = 12;
+}
+
+  var filter = m => m.author.id === message.author.id;
+  if(message.content.startsWith(prefix + "giveaway")) {
+
+    if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **يجب أن يكون لديك خاصية التعديل على السيرفر**');
+    message.channel.send(`:eight_pointed_black_star:| **Send Name channel For the Giveaway**`).then(msg => {
+      message.channel.awaitMessages(filter, {
+        max: 1,
+        time: 20000,
+        errors: ['time']
+      }).then(collected => {
+        let room = message.guild.channels.find('name' , collected.first().content);
+        if(!room) return message.channel.send(':heavy_multiplication_x:| **i Found It :(**');
+        room = collected.first().content;
+        collected.first().delete();
+        msg.edit(':eight_pointed_black_star:| **Time For The Giveaway**').then(msg => {
+          message.channel.awaitMessages(filter, {
+            max: 1,
+            time: 20000,
+            errors: ['time']
+          }).then(collected => {
+            if(isNaN(collected.first().content)) return message.channel.send(':heavy_multiplication_x:| **The Time Be Nambers `` Do the Commend Agin``**');
+            duration = collected.first().content * 60000;
+            collected.first().delete();
+            msg.edit(':eight_pointed_black_star:| **Now send The Present **').then(msg => {
+              message.channel.awaitMessages(filter, {
+                max: 1,
+                time: 20000,
+                errors: ['time']
+              }).then(collected => {
+                title = collected.first().content;
+                collected.first().delete();
+                msg.delete();
+                message.delete();
+                try {
+                  let giveEmbed = new Discord.RichEmbed()
+                  .setDescription(`**${title}** \nReact With 🎉 To Enter! \nTime remaining : ${duration / 60000} **Minutes**\n **Created at :** ${hours}:${minutes}:${seconds} ${suffix}`)
+                  .setFooter(message.author.username, message.author.avatarURL);
+                  message.guild.channels.find("name" , room).send(' :heavy_check_mark: **Giveaway Created** :heavy_check_mark:' , {embed: giveEmbed}).then(m => {
+                     let re = m.react('🎉');
+                     setTimeout(() => {
+                       let users = m.reactions.get("🎉").users;
+                       let list = users.array().filter(u => u.id !== m.author.id !== client.user.id);
+                       let gFilter = list[Math.floor(Math.random() * list.length) + 0]
+                       let endEmbed = new Discord.RichEmbed()
+                       .setAuthor(message.author.username, message.author.avatarURL)
+                       .setTitle(title)
+                       .addField('Giveaway Ended !🎉',`Winners : ${gFilter} \nEnded at :`)
+                       .setTimestamp()
+					 m.edit('** 🎉 GIVEAWAY ENDED 🎉**' , {embed: endEmbed});
+					message.guild.channels.find("name" , room).send(`**Congratulations ${gFilter}! You won The \`${title}\`**` , {embed: {}})
+                     },duration);
+                   });
+                } catch(e) {
+                message.channel.send(`:heavy_multiplication_x:| **i Don't Have Prem**`);
+                  console.log(e);
+                }
+              });
+            });
+          });
+        });
+      });
+    });
+  }
 });
 
 
