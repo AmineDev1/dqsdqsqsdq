@@ -199,8 +199,12 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
 client.on("ready", async  => {
 setInterval(function(){
 client.channels.find('id', '521265412944691211').setName("Welcome ");
+client.channels.find('id', '521265412944691211').setName("Welcome ");
+client.channels.find('id', '521265412944691211').setName("Welcome To ");
 client.channels.find('id', '521265412944691211').setName("Welcome To ");
 client.channels.find('id', '521265412944691211').setName("Welcome To KSA");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ");
 client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ");
 client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ♥");
 client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ♥");
@@ -211,6 +215,14 @@ client.channels.find('id', '521265412944691211').setName("سبحــآآن آل�
 client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
 client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
 client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
+client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
+client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
+client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
+client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
+client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
+client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
+client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
+client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
 client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
 client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
 client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
@@ -219,6 +231,14 @@ client.channels.find('id', '521265412944691211').setName("لآ إله الا آ�
 client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ");
 client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ");
 client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ");
+client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ");
+client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ");
+client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ");
+client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ");
+client.channels.find('id', '521265412944691211').setName("مـحــمد رســول آللـہ");
+client.channels.find('id', '521265412944691211').setName("مـحــمد رســول آللـہ");
+client.channels.find('id', '521265412944691211').setName("مـحــمد رســول آللـہ");
+client.channels.find('id', '521265412944691211').setName("مـحــمد رســول آللـہ");
 client.channels.find('id', '521265412944691211').setName("مـحــمد رســول آللـہ");
 client.channels.find('id', '521265412944691211').setName("مـحــمد رســول آللـہ");
 client.channels.find('id', '521265412944691211').setName("مـحــمد رســول آللـہ");
@@ -227,8 +247,12 @@ client.channels.find('id', '521265412944691211').setName("♥ ");
 client.channels.find('id', '521265412944691211').setName("♥ ");
 client.channels.find('id', '521265412944691211').setName("♥ ");
 client.channels.find('id', '521265412944691211').setName("Welcome ");
+client.channels.find('id', '521265412944691211').setName("Welcome ");
+client.channels.find('id', '521265412944691211').setName("Welcome To ");
 client.channels.find('id', '521265412944691211').setName("Welcome To ");
 client.channels.find('id', '521265412944691211').setName("Welcome To KSA");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ");
 client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ");
 client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ♥");
 client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ♥");
