@@ -28,33 +28,6 @@ client.user.setGame(` KSA Community Forever ♥  `,"http://twitch.tv/S-F")
 });
 
 
-const adminprefix = "$";
-const devs = ['417377495160193044'];
-client.on('message', message => {
-  var argresult = message.content.split(` `).slice(1).join(' ');
-    if (!devs.includes(message.author.id)) return;
-   
-if (message.content.startsWith(adminprefix + 'setg')) {
-  client.user.setGame(argresult);
-    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
-} else
-  if (message.content.startsWith(adminprefix + 'setname')) {
-client.user.setUsername(argresult).then
-    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
-return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
-} else
-  if (message.content.startsWith(adminprefix + 'setavatar')) {
-client.user.setAvatar(argresult);
-  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
-      } else    
-if (message.content.startsWith(adminprefix + 'setT')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk");
-    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
-}
- 
-});
-
-
 client.on('message', async message => {
   if(message.author.bot) return;
   let prefix = '*';
@@ -198,59 +171,26 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
 
 client.on("ready", async  => {
 setInterval(function(){
-client.channels.find('id', '521265412944691211').setName("Welcome ");
-client.channels.find('id', '521265412944691211').setName("Welcome ");
-client.channels.find('id', '521265412944691211').setName("Welcome To ");
-client.channels.find('id', '521265412944691211').setName("Welcome To ");
+client.channels.find('id', '521265412944691211').setName("W");
+client.channels.find('id', '521265412944691211').setName("We");
+client.channels.find('id', '521265412944691211').setName("Wel");
+client.channels.find('id', '521265412944691211').setName("Welc");
+client.channels.find('id', '521265412944691211').setName("Welco");
+client.channels.find('id', '521265412944691211').setName("Welcom");
+client.channels.find('id', '521265412944691211').setName("Welcome");
+client.channels.find('id', '521265412944691211').setName("Welcome T");
+client.channels.find('id', '521265412944691211').setName("Welcome To");
+client.channels.find('id', '521265412944691211').setName("Welcome To K");
+client.channels.find('id', '521265412944691211').setName("Welcome To KS");
 client.channels.find('id', '521265412944691211').setName("Welcome To KSA");
-client.channels.find('id', '521265412944691211').setName("Welcome To KSA");
-client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ");
-client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ");
-client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ♥");
-client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ♥");
-client.channels.find('id', '521265412944691211').setName("♥ ");
-client.channels.find('id', '521265412944691211').setName("♥ ");
-client.channels.find('id', '521265412944691211').setName("♥ ");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ ۆ بحمده");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
-client.channels.find('id', '521265412944691211').setName("سبحــآآن آللـہ آلعظيّـمَ ");
-client.channels.find('id', '521265412944691211').setName(");
-client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ   مـحــمد رســول آللـہ");
-client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ   مـحــمد رســول آللـہ");
-client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ   مـحــمد رســول آللـہ");
-client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ   مـحــمد رســول آللـہ");
-client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ   مـحــمد رســول آللـہ");
-client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ   مـحــمد رســول آللـہ");
-client.channels.find('id', '521265412944691211').setName("لآ إله الا آللـہ   مـحــمد رســول آللـہ");
-client.channels.find('id', '521265412944691211').setName("♥ ");
-client.channels.find('id', '521265412944691211').setName("♥♥ ");
-client.channels.find('id', '521265412944691211').setName("♥♥♥ ");
-client.channels.find('id', '521265412944691211').setName("Welcome ");
-client.channels.find('id', '521265412944691211').setName("Welcome ");
-client.channels.find('id', '521265412944691211').setName("Welcome To ");
-client.channels.find('id', '521265412944691211').setName("Welcome To ");
-client.channels.find('id', '521265412944691211').setName("Welcome To KSA");
-client.channels.find('id', '521265412944691211').setName("Welcome To KSA");
-client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ");
-client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ");
-client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ♥");
-client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community ♥");
-client.channels.find('id', '521265412944691211').setName("♥ ");
-client.channels.find('id', '521265412944691211').setName("♥ ");
-client.channels.find('id', '521265412944691211').setName("♥ ");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA C");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Com");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Comm");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Commu");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Commun");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Communi");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Communit");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community");
   }, 3000);
 });
 
