@@ -76,6 +76,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+
 client.on('message', message => {
   let command = message.content.split(" ")[0].slice(prefix.length);
   let args = message.content.split(" ").slice(1);
@@ -98,8 +99,9 @@ client.on('message', message => {
 });
 
 
+
 client.on('message', message => { 
-    var prefix = "-#";
+    var prefix = "-";
  let args = message.content.split(' ').slice(1);
     if(message.content.startsWith(prefix + 's')) {
     if(!message.channel.guild) return;  
