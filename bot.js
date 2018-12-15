@@ -28,52 +28,6 @@ client.user.setGame(` KSA Community Forever ♥  `,"http://twitch.tv/S-F")
 });
 
 
-client.on('ready',async () => {
-  client.channels.find(ch => ch.id === "521265412944691211" && ch.type === 'voice').join();
-});
-
-
-const hastebin = require('hastebin-gen');
-client.on('message', message => {
-var PREFIX = '*';
-    if(message.content.startsWith(PREFIX + 'dis')) {
-            var args = message.content.split(' ').slice(1).join(' ');
-}
-      var array = [];
-      var i = 0;
-      if(args){
-client.users.filter(u => u.discriminator == args).map(u => {
-    if(i > 4){
-     return;
-    }
-    i = i + 1;
- 
-   array.push(`${u.tag}`);
-});
-}
-hastebin(`${array.slice(0, 30).join('\n')}`, 'txt').then(l => {
-    message.channel.send(`${l}`);
-}).catch(console.error);
-});
-client.on('message' , message => {
-var PREFIX = '*';
-if(message.content === `${PREFIX}dis         `         ) {
-                      let array = [];
-                      var i = 0;
-client.users.filter(u => u.discriminator == message.author.discriminator).map(u => {
-    if(i > 4){
-     return;
-    }
-    i = i + 1;
-   array.push(`${u.tag}`);
-});
-hastebin(`${array.slice(0, 30).join('\n')}`, 'txt').then(l => {
-    message.channel.send(`${l}`);
-}).catch(console.error);
- 
-        }
-});
-
 
 const adminprefix = "$";
 const devs = ['417377495160193044'];
@@ -101,32 +55,6 @@ if (message.content.startsWith(adminprefix + 'setT')) {
  
 });
 
-
-
-var prefix = "*"
-const moment = require('moment');
-client.on('message',async message => {
-  var time = moment().format('Do MMMM YYYY , hh:mm');
-  var room;
-  var title;
-  var duration;
-  var gMembers;
-  var currentTime = new Date(),
-hours = currentTime.getHours() + 3 ,
-minutes = currentTime.getMinutes(),
-done = currentTime.getMinutes() + duration / 60000 ,
-seconds = currentTime.getSeconds();
-if (minutes < 10) {
-minutes = "0" + minutes;
-}
-var suffix = "AM";
-if (hours >= 12) {
-suffix = "PM";
-hours = hours - 12;
-}
-if (hours == 0) {
-hours = 12;
-}
 
   var filter = m => m.author.id === message.author.id;
   if(message.content.startsWith(prefix + "giveaway")) {
